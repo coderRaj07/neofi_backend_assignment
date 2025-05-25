@@ -110,8 +110,8 @@ python manage.py runserver
 
 * [x] `POST /api/events/{id}/share` – Share an event with other users
 * [x] `GET /api/events/{id}/permissions` – List all permissions for an event
-* [x] `PUT /api/events/{id}/permissions/{userId}` – Update permissions for a user
-* [x] `DELETE /api/events/{id}/permissions/{userId}` – Remove access for a user
+* [x] `PUT /api/events/{id}/permissions/{userId}/update` – Update permissions for a user
+* [x] `DELETE /api/events/{id}/permissions/{userId}/remove` – Remove access for a user
 
 ---
 
