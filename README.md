@@ -84,7 +84,7 @@ python manage.py runserver
 
 ## 📬 Postman Collection
 
-🧪 [View Postman Collection](https://api.postman.com/collections/34426322-4fce79ba-a629-41ec-b971-46b2682e2d74?access_key=PMAT-01JW2X2JCWWKZPJ1EKX7K3G03E)
+🧪 [View Postman Collection](neofi_backend_assignment.postman_collection.json)
 
 ---
 
