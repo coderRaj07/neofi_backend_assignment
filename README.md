@@ -62,8 +62,8 @@ REDIS_URL="your_redis_url"
 ### 1. Create Migration Folders
 
 ```bash
-python manage.py makemigrations events
 python manage.py makemigrations users
+python manage.py makemigrations events
 ```
 
 ### 2. Apply Migrations
