@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "4fce79ba-a629-41ec-b971-46b2682e2d74",
+		"name": "neofi_backend_assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34426322"
+	},
+	"item": [
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "get_all_events",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get_events_by_id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create_single_event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTQ3MTIyLCJpYXQiOjE3NDgxNDM1MjIsImp0aSI6IjVkNTIyNGYxYTNlNDQwN2I5MGI0N2U4YjBjOTVkYzgyIiwidXNlcl9pZCI6IjFlNTQ2YTAxLWM0NGEtNDU5Mi1iNDFjLWU4YThmY2VlNjk5ZSJ9.5pvaa5kvH5Ht2_lGrL14Udepw-Gc0Lsptf69HO-eJjo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Team Sync\",\n    \"description\": \"Weekly sync-up\",\n    \"start_time\": \"2025-06-01T09:00:00Z\",\n    \"end_time\": \"2025-06-01T10:00:00Z\",\n    \"location\": \"Google Meet\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/events/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_batch_events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTM3NTU2LCJpYXQiOjE3NDgxMzcyNTYsImp0aSI6IjQ0MGE0YjliMWRiNzQ0YTRiMDI2MjU1MDE4Y2Q3ODYxIiwidXNlcl9pZCI6MX0.xv6_U5_vOdH25LiNjwWAgnjCbqCnCkr-WnSuPJlOYMs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"title\": \"Team Sync\",\n      \"description\": \"Weekly sync-up\",\n      \"start_time\": \"2025-06-01T09:00:00Z\",\n      \"end_time\": \"2025-06-01T10:00:00Z\",\n      \"location\": \"Google Meet\"\n    },\n    {\n      \"title\": \"Client Meeting\",\n      \"description\": \"Discuss deliverables\",\n      \"start_time\": \"2025-06-02T14:00:00Z\",\n      \"end_time\": \"2025-06-02T15:30:00Z\",\n      \"location\": \"Office HQ\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/events/batch/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								"batch",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_event_by_id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTQ3MTIyLCJpYXQiOjE3NDgxNDM1MjIsImp0aSI6IjVkNTIyNGYxYTNlNDQwN2I5MGI0N2U4YjBjOTVkYzgyIiwidXNlcl9pZCI6IjFlNTQ2YTAxLWM0NGEtNDU5Mi1iNDFjLWU4YThmY2VlNjk5ZSJ9.5pvaa5kvH5Ht2_lGrL14Udepw-Gc0Lsptf69HO-eJjo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"location\": \"Office HQ 23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/events/47bfba1d-4c40-405d-87fa-eec23a3b341a/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								"47bfba1d-4c40-405d-87fa-eec23a3b341a",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_events_by_id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTQwMzc2LCJpYXQiOjE3NDgxNDAwNzYsImp0aSI6ImIxZjQ0YjI5YzI2ZjQ1NzliOTU4ODI3MTEzOGIwYjU5IiwidXNlcl9pZCI6MX0.guUjIhoYG-d3MO1DGT6x38Yh8EI2pkdCtqDqfl79G_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/events/7/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								"7",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "share_event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTQ4NDc4LCJpYXQiOjE3NDgxNDQ4NzgsImp0aSI6IjhlMzA0ZDM5YzhhYjRhM2RiNzhhZDhmZjUyNmI1OTdhIiwidXNlcl9pZCI6IjFlNTQ2YTAxLWM0NGEtNDU5Mi1iNDFjLWU4YThmY2VlNjk5ZSJ9.lLtWhEDBbeSkZAJAKqZoU_9dyvoh7zf0q1ncetzUAec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"users\": [\n    { \"user_id\": \"ef33f847-e9ed-49f8-a75f-1199825701e7\", \"role\": \"Editor\" },\n    { \"user_id\": \"d55b03dc-d876-4856-a143-423123256494\", \"role\": \"Viewer\" }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/events/1eb68ab7-4093-4b1f-b08f-208b7381c2c6/share/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								"1eb68ab7-4093-4b1f-b08f-208b7381c2c6",
+								"share",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_permission_by_event_id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTQ4NDc4LCJpYXQiOjE3NDgxNDQ4NzgsImp0aSI6IjhlMzA0ZDM5YzhhYjRhM2RiNzhhZDhmZjUyNmI1OTdhIiwidXNlcl9pZCI6IjFlNTQ2YTAxLWM0NGEtNDU5Mi1iNDFjLWU4YThmY2VlNjk5ZSJ9.lLtWhEDBbeSkZAJAKqZoU_9dyvoh7zf0q1ncetzUAec",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/events/1eb68ab7-4093-4b1f-b08f-208b7381c2c6/permissions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								"1eb68ab7-4093-4b1f-b08f-208b7381c2c6",
+								"permissions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_permission_for_user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTUwMTY4LCJpYXQiOjE3NDgxNDY1NjgsImp0aSI6IjI3OTgyYzI4ZThhZTRkZmJiZTMwMTZjY2FjOGE1OTNiIiwidXNlcl9pZCI6IjFlNTQ2YTAxLWM0NGEtNDU5Mi1iNDFjLWU4YThmY2VlNjk5ZSJ9.XIXGJccQ2PNSTypRGarH3c8eAVMW23BzNlk6OLwNBPs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"role\":\t\"Viewer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/events/1eb68ab7-4093-4b1f-b08f-208b7381c2c6/permissions/ef33f847-e9ed-49f8-a75f-1199825701e7/update/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"events",
+								"1eb68ab7-4093-4b1f-b08f-208b7381c2c6",
+								"permissions",
+								"ef33f847-e9ed-49f8-a75f-1199825701e7",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_permission_for_user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": [
+								{
+									"key": "algorithm",
+									"value": "HS256",
+									"type": "string"
+								},
+								{
+									"key": "isSecretBase64Encoded",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "payload",
+									"value": "{}",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "headerPrefix",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "queryParamKey",
+									"value": "token",
+									"type": "string"
+								},
+								{
+									"key": "header",
+									"value": "{}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ4MTAxMjQ0LCJpYXQiOjE3NDgxMDA5NDQsImp0aSI6IjE0YWVkMzcwYjU5ZjRlMmI4YjQ5MzRmNGU4NTIxMWVmIiwidXNlcl9pZCI6MX0.fUCz-bN_AUYb8zGfSVCQEO9BMNVYu0WhoQEe4P9HqE8\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"testpassword123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/logout/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"testpassword123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"testuser\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"testpassword123\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "default"
+		}
+	]
+}
